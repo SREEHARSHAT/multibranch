@@ -1,9 +1,28 @@
 pipeline{
   agent any
    stages{
-   stage('demo'){
+   stage('dev - deploy'){
+   when{
+   branch "dev"
+   }
    steps{
-   echo "Deploy to xyz env"
+   echo "Deploy to dev env"
+}
+}
+stage('uat - deploy'){
+   when{
+   branch "uat"
+   }
+   steps{
+   echo "Deploy to uat env"
+}
+}
+stage('prd - deploy'){
+   when{
+   branch "main"
+   }
+   steps{
+   echo "Deploy to prd env"
 }
 }
 }
