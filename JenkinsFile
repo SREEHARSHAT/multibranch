@@ -24,6 +24,7 @@ stage('prd - deploy'){
    steps{
    echo "Deploy to prd env"
 }
+
 }
 }
 }
